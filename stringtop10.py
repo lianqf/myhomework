@@ -21,12 +21,10 @@ print (list_num)
 
 result_dict = {}
 temp_up = ''
-for i in range(1,10):
+for i in range(1,11):
     temp = list_num[len(list_num) - i]
     for top_char in dict_str:
         if dict_str[top_char] == temp:
             if temp != temp_up:
-                
                 print ('char is %s ,number is %d'  %(top_char,temp))
-        print (temp,temp_up)
-        temp_up = temp    
+    temp_up = temp    
