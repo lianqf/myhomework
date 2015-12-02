@@ -11,7 +11,7 @@ print (dict_user)
 def file_update(dict_userpass):
 	with open('data.txt','w') as f:
 		for key in dict_userpass:
-			f.write(key + ' ' + dict_userpass[key])
+			f.write(key + ' ' + dict_userpass[key] + '\n')
 
 
 @app.route('/')
@@ -31,8 +31,9 @@ def Uadd():
 		if user =='' :
 			res = 'user can not be empty'
 		else:
+			dict_user[user] = password
 			file_update(dict_user)
-			res = 'is successfull add'
+			res = 'is add'
 
 	return render_template('index.html', user_dic=dict_user, msg='user: %s password: %s  %s' % (user, password,res) )
 
@@ -42,6 +43,7 @@ def Udel():
 	print (user)
 	dict_user.pop(user)
 	file_update(dict_user)
+	res = 'is delte'
 	return render_template('index.html', user_dic=dict_user, msg='user: %s  %s' % (user,res))
 
 			

@@ -12,7 +12,7 @@ def index():
 @app.route('/udel')
 def udel():
 	user = request.args.get('user')	
-	print (user)
-
+	#print (user)
+	return (user)
 if __name__ == '__main__':
 	app.run(host='0.0.0.0',port=9013,debug=True)
