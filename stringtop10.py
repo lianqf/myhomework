@@ -2,6 +2,8 @@ char_str = "first of all, i want make it clear that i can not claim understandin
 #char_str = "first of all, i want make it"
 list_str = list(char_str)
 dict_str = {}
+
+#字符串转换数组
 for temp in list_str:
     if temp in dict_str:
         dict_str[temp] = dict_str[temp] + 1
@@ -12,13 +14,15 @@ print (dict_str)
 list_num = list(dict_str.values())
 print (list_num)
 
+#冒泡排序次数top10
 values_count = len(list_num)
-for i in range(1,10):
+for i in range(1,11):
     for j in range(1,values_count):
         if list_num[j - 1] > list_num[j] :
             list_num[j - 1],list_num[j] = list_num[j],list_num[j-1]
 print (list_num)
 
+#打印结果
 result_dict = {}
 temp_up = ''
 for i in range(1,11):
